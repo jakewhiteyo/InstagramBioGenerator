@@ -10,7 +10,7 @@ GPT_MODEL_NAME = 'gpt-3.5-turbo-instruct'
 def generate_caption():
    response = openai.Completion.create(
             model=GPT_MODEL_NAME,
-            prompt="Give me a sentence of the structure - {adjective} doing it. Where {adjective} is a complicated one-word exaggeration (example: unequivocally). Make the adjective pretty complex and require a high reading level. You can replace {doing} with words like [handling, running, doing, making]. Only respond with these 3 words in this format.",
+            prompt="Give me a sentence of the structure - {adverb} doing it. Where {adverb} is a complicated one-word exaggeration (example: unequivocally). Make the adjective pretty complex and require a high reading level. You can replace {doing} with words like [handling, running, doing, making]. Only respond with these 3 words in this format.",
             max_tokens=50, 
             n=1,
             stop=None, 
@@ -20,7 +20,7 @@ def generate_caption():
 
 def drive_to_instagram(username, password, bio):
   options = Options()
-  options.add_argument("--headless")
+  # options.add_argument("--headless")
   driver = webdriver.Firefox(options=options)
   driver.implicitly_wait(10)
   driver.get("https://www.instagram.com/accounts/edit/")
